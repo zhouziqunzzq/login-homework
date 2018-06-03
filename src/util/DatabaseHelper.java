@@ -13,7 +13,7 @@ public class DatabaseHelper {
      */
     public static Connection getConnFromConfig(Properties properties) {
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             return DriverManager.getConnection(String.format("jdbc:mysql://%s/%s?useUnicode=true" +
                             "&characterEncoding=UTF-8", properties.getProperty("DBAddress"),
                     properties.getProperty("DBName")),
